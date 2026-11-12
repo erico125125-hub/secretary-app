@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>秘書アプリ</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>自分専用の秘書アプリ</h1>
+  </header>
+
+  <main>
+    <!-- ダッシュボード -->
+    <section class="dashboard">
+      <div class="stat"><span class="label">メモ</span><span id="memoCount" class="num">0</span></div>
+      <div class="stat"><span class="label">タスク</span><span id="taskCount" class="num">0</span></div>
+      <div class="stat highlight"><span class="label">未完了タスク</span><span id="openCount" class="num">0</span></div>
+    </section>
+
+    <!-- ダッシュボード：最新の振り返り -->
+    <section class="latest-review">
+      <div class="latest-head">
+        <span class="label">最新の振り返り</span>
+        <span id="latestWeek" class="latest-week"></span>
+      </div>
+      <p id="latestComment" class="latest-comment"></p>
+    </section>
+
+    <div class="columns">
+      <!-- メモ -->
+      <div class="column">
+        <section class="card">
+          <h2>メモ追加</h2>
+          <form id="memoForm">
+            <input id="memoTitle" type="text" placeholder="タイトル" maxlength="100" required>
+            <textarea id="memoContent" rows="4" placeholder="本文"></textarea>
+            <button type="submit">メモを追加</button>
+          </form>
+        </section>
+        <section class="card">
+          <h2>メモ一覧</h2>
+          <ul id="memoList" class="list"></ul>
+        </section>
+      </div>
+
+      <!-- タスク -->
+      <div class="column">
+        <section class="card">
+          <h2>タスク追加</h2>
+          <form id="taskForm" class="inline">
+            <input id="taskTitle" type="text" placeholder="やること" maxlength="200" required>
+            <button type="submit">追加</button>
+          </form>
+        </section>
+        <section class="card">
+          <h2>タスク一覧</h2>
+          <ul id="taskList" class="list"></ul>
+        </section>
+      </div>
+    </div>
+
+    <!-- 週次の振り返り -->
+    <div class="column review-column">
+      <section class="card">
+        <h2>週次の振り返り</h2>
+        <form id="reviewForm">
+          <div class="week-row">
+            <label for="reviewDate">対象の週</label>
+            <input id="reviewDate" type="date" required>
+            <span id="reviewWeekLabel" class="week-label"></span>
+          </div>
+          <p id="reviewWeekStats" class="week-stats"></p>
+          <textarea id="reviewComment" rows="4" placeholder="今週できたこと、うまくいかなかったこと、来週やりたいことなど"></textarea>
+          <button type="submit" id="reviewSubmit">振り返りを保存</button>
+        </form>
+      </section>
+      <section class="card">
+        <h2>振り返り一覧</h2>
+        <ul id="reviewList" class="list"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
