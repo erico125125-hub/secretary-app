@@ -36,6 +36,7 @@ function render() {
   // ダッシュボード
   $('memoCount').textContent = state.memos.length;
   $('taskCount').textContent = state.tasks.length;
+  $('doneCount').textContent = state.tasks.filter((t) => t.done).length;
   $('openCount').textContent = state.tasks.filter((t) => !t.done).length;
 
   // メモ一覧

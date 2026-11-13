@@ -33,7 +33,7 @@ header h1 { margin: 0; font-size: 1.35rem; letter-spacing: .05em; }
 main { max-width: 1100px; margin: 0 auto; padding: 18px 16px; }
 
 /* ダッシュボード：カードごとに色を変える */
-.dashboard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+.dashboard { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
 .stat {
   border-radius: 16px;
   padding: 14px;
@@ -42,17 +42,19 @@ main { max-width: 1100px; margin: 0 auto; padding: 18px 16px; }
 }
 .stat:nth-child(1) { background: var(--lavender); }
 .stat:nth-child(2) { background: var(--mint); }
-.stat:nth-child(3) { background: var(--pink); }
+.stat:nth-child(3) { background: var(--sky); }
+.stat:nth-child(4) { background: var(--pink); }
 .stat .label { display: block; font-size: .9rem; font-weight: bold; color: var(--text); }
 .stat .num { display: block; font-size: 2.2rem; font-weight: bold; margin-top: 2px; }
 .stat:nth-child(1) .num { color: var(--lavender-deep); }
 .stat:nth-child(2) .num { color: var(--mint-deep); }
-.stat:nth-child(3) .num { color: var(--pink-deep); }
+.stat:nth-child(3) .num { color: var(--sky-deep); }
+.stat:nth-child(4) .num { color: var(--pink-deep); }
 
 .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
 @media (max-width: 760px) {
   .columns { grid-template-columns: 1fr; }
-  .dashboard { gap: 8px; }
+  .dashboard { gap: 8px; grid-template-columns: repeat(2, 1fr); }
   .stat .num { font-size: 1.7rem; }
 }
 
