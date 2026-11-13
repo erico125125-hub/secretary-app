@@ -35,7 +35,7 @@ async function reload() {
 function render() {
   // ダッシュボード
   $('memoCount').textContent = state.memos.length;
-  $('doneCount').textContent = state.tasks.filter((t) => t.done).length;
+  $('taskCount').textContent = state.tasks.length;
   $('openCount').textContent = state.tasks.filter((t) => !t.done).length;
 
   // メモ一覧
