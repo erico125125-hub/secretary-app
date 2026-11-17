@@ -29,6 +29,24 @@ header {
   color: var(--text);
   padding: 16px 20px;
 }
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+}
+.today {
+  background: rgba(255, 255, 255, .75);
+  border-radius: 999px;
+  padding: 6px 16px;
+  font-weight: bold;
+  font-size: 1.05rem;
+  color: var(--text);
+  white-space: nowrap;
+}
+.today .dow-sat { color: var(--sky-deep); }
+.today .dow-sun { color: var(--pink-deep); }
 header h1 { margin: 0; font-size: 1.35rem; letter-spacing: .05em; }
 main { max-width: 1100px; margin: 0 auto; padding: 18px 16px; }
 

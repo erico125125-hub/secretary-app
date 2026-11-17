@@ -211,4 +211,16 @@ $('reviewForm').addEventListener('submit', (e) => {
   run(() => api('POST', '/api/reviews', { date, comment }));
 });
 
+// ---- 今日の日付（画面上部に表示。日付が変わったら自動で更新） ----
+function renderToday() {
+  const d = new Date();
+  const dow = d.getDay();
+  const box = $('today');
+  box.replaceChildren(`${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`);
+  const day = el('span', dow === 0 ? 'dow-sun' : dow === 6 ? 'dow-sat' : '', `（${WEEKDAYS[dow]}）`);
+  box.append(day);
+}
+renderToday();
+setInterval(renderToday, 60 * 1000);
+
 reload().then(() => updateReviewForm(true)).catch((e) => alert('データの読み込みに失敗しました: ' + e.message));
